@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-DJzGRJFG.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B0WpN0k-.css">
+  </head>
+  <body>
+    <div class="controls">
+      <button>
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20aria-hidden='true'%20role='img'%20class='iconify%20iconify--logos'%20width='32'%20height='32'%20preserveAspectRatio='xMidYMid%20meet'%20viewBox='0%200%20256%20256'%3e%3cpath%20fill='%23F7DF1E'%20d='M0%200h256v256H0V0Z'%3e%3c/path%3e%3cpath%20d='m67.312%20213.932l19.59-11.856c3.78%206.701%207.218%2012.371%2015.465%2012.371c7.905%200%2012.89-3.092%2012.89-15.12v-81.798h24.057v82.138c0%2024.917-14.606%2036.259-35.916%2036.259c-19.245%200-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157%208.421%2011.859%2014.607%2023.715%2014.607c9.969%200%2016.325-4.984%2016.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044%2013.747-31.792%2035.228-31.792c15.294%200%2026.292%205.328%2034.196%2019.247l-18.732%2012.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046%200-11.514%204.468-11.514%2010.31c0%207.217%204.468%2010.14%2014.778%2014.608l6.014%202.577c20.45%208.765%2031.963%2017.7%2031.963%2037.804c0%2021.654-17.012%2033.51-39.867%2033.51c-22.339%200-36.774-10.654-43.819-24.574'%3e%3c/path%3e%3c/svg%3e" alt="JavaScript button" id="js-button" class="active">
+      </button>
+      <button>
+        <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!--%20Created%20by%20AtomCrusher%20for%20the%20English%20Wikipedia%20--%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%20width='612'%20height='612'%3e%3c!--%20Block%20--%3e%3cpath%20d='m376%200c0%201.08%200%202.16%200%203.3%200%2038.76-31.42%2070.17-70.17%2070.17-38.76%200-70.17-31.42-70.17-70.17l0%200c0-1.14%200-2.22%200-3.3L0%200l0%20612%20612%200%200-612z'%20fill='%23654ff0'/%3e%3c!--%20Letters%20--%3e%3cpath%20d='m142.16%20329.81%2040.56%200%2027.69%20147.47%200.5%200%2033.28-147.47%2037.94%200%2030.06%20149.28%200.59%200%2031.56-149.28%2039.78%200-51.69%20216.69-40.25%200-29.81-147.47-0.78%200-31.91%20147.47-41%200zm287.69%200%2063.94%200%2063.5%20216.69-41.84%200-13.81-48.22-72.84%200-10.66%2048.22-40.75%200zm24.34%2053.41-17.69%2079.5%2055.06%200-20.31-79.5z'%20fill='%23fff'/%3e%3c/svg%3e" alt="Wasm button" id="wasm-button">
+      </button>
+    </div>
+    <script type="x-shader/x-vertex" id="vertexshader">
+			attribute float scale;
+
+			void main() {
+
+				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+				gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+				gl_Position = projectionMatrix * mvPosition;
+
+			}
+		</script>
+
+		<script type="x-shader/x-fragment" id="fragmentshader">
+			uniform vec3 color;
+
+			void main() {
+
+				if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+				gl_FragColor = vec4( color, 1.0 );
+
+			}
+		</script>
+  </body>
+</html>
